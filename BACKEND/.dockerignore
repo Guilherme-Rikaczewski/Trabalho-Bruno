@@ -1,0 +1,15 @@
+# Ambientes virtuais
+venv/
+.venv/
+env/
+.env
+
+# Outros arquivos comuns para ignorar
+__pycache__/
+*.pyc
+.git/
+.gitignore
+.vscode/
+.mypy_cache/
+.sql
+.pdf
