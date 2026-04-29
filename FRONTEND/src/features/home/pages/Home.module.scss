@@ -1,0 +1,215 @@
+/* GAME CONTENT */
+.homePage{
+    padding-top: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.gameContainer{
+    background-color: $bg-dark-primary;
+    border-radius: 16px;
+    margin: 5vh 0;
+}
+.headerGames{
+    padding: 22px 16px 20px 8px;
+    display: flex;
+    justify-content: space-between;
+}
+.headerGames h2{
+    width: auto;
+}
+.search{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 0.14rem solid $primary-green;
+    border-radius: 2rem;
+    background-color: transparent;
+    padding: 0 20px;
+
+    input{
+        border: 0;
+        background: none;
+        padding: 10px 0;
+        width: 100%;
+        color: white;
+        margin-right: 1rem;
+    }
+    input::placeholder{
+        color: #638b86e2;
+        font-weight: 500;
+    }
+    input:focus{
+        border: 0;
+        border-color: none;
+        background-color: 0;
+        outline: none;
+    }
+
+    input[type="search"]::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+        appearance: none;
+        display: none;
+    }
+
+    input[type="search"]::-moz-search-clear {
+        display: none;
+    }
+}
+
+
+.btnMore{
+    margin: 2rem 0;
+    font-weight: 700;
+    border: 0;
+    border-radius: 50px;
+    background-color: $primary-green;
+    color: $bg-dark-primary;
+    height: 50px;
+}
+.btnMore:hover{
+    transition-duration: 0.45s;
+    background-color: #a38fd3;
+}
+
+
+/* ASIDE */
+.aside{
+    display: flex;
+    flex-direction: column;
+    margin: 5vh 0;
+    gap: 20px;
+    padding: 0;
+}
+
+
+/* MEDIA QUERY */
+@media screen and (max-width: 1400px) {
+    .card-body{
+        height: 7vh;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .card-title{
+        font-size: 2.4vh;
+    }
+    .card-body{
+        height: 6.3vh;
+    }
+}
+
+
+@media screen and (max-width: 990px) {
+    .sectionRow{
+        flex-direction: column;
+        gap: 0;
+    }
+    .aside{
+        width: auto;
+        margin: 0;
+    }
+    .btnDiv{
+        margin: 0;
+    }
+    .gameContainer{
+        width: auto;
+    }
+    .sheetsContainer{
+        overflow: visible;
+        margin-bottom: 10vh;
+        
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .card-body{
+        height: 6vh;
+    }
+}
+
+@media screen and (max-width: 575px){
+    .aside{
+        gap: 25px;
+    }
+    .gameContainer{
+        border-radius: 0;
+        margin-top: 1px;
+    }
+    .gameBox{
+        width: auto;
+        border-radius: 15px;
+    }
+    .nav-sheets-container{
+        border-radius: 0;
+    }
+    .headerGames{ 
+        height: auto;
+        justify-content: center;
+        padding: 15px 0 0 0; 
+    }
+    .search{
+        display: none;
+    }
+    .sheetsContainer{
+        border-radius: 0;
+    }
+    .card-title{
+        font-size: 2.5vh;
+    }
+    .nav-tabs, .btn-tab.active{
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        height: 9vh;
+    }
+    .card-body{
+        display: flex;
+        height: 7.5vh;
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 530px){
+    .card-title{
+        font-size: 2.2vh;
+    }
+    .card-body{
+        height: 6.6vh;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .card-title{
+        font-size: 1.8vh;
+    }
+    .card-body{
+        height: 6.2vh;
+    }
+}
+
+@media screen and (max-width: 371px){
+    .card-title{
+        font-size: 1.5vh;
+    }
+    .card-body{
+        height: 5vh;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .card-title{
+        font-size: 1.35vh;
+    }
+    .card-body{
+        height: 4.8vh;
+    }
+}
+
+@media screen and (max-width: 306px){
+    .card-title{
+        font-size: 1.2vh;
+    }
+    .card-body{
+        height: 5vh;
+    }
+}

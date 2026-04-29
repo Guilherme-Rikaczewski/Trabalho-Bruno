@@ -1,0 +1,45 @@
+version: "3.8"
+# RODE  docker compose -f docker-compose.dev.yml up -d     PARA USAR O MODO DEV
+# RODE  docker compose -f docker-compose.dev.yml down -v   PARA PARAR
+services:
+  backend:
+    build: ./Dice-Tale-Backend
+    container_name: dicetale_backend
+    ports:
+      - "${SERVER_PORT}:${SERVER_PORT}"
+    depends_on:
+      - postgres
+      - redis
+    env_file:
+      - .env
+    restart: always
+
+  postgres:
+    image: postgres:17.5
+    container_name: postgres_dicetale
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      # Persistência dos dados
+      - pgdata:/var/lib/postgresql/data
+      # Script de inicialização
+      - ./db-init.sql:/docker-entrypoint-initdb.d/db-init.sql
+    restart: always
+  
+  redis:
+    image: redis:latest
+    container_name: redis
+    command: ["redis-server", "--appendonly", "yes", "--requirepass", "${REDIS_PASSWORD}"]
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD}", "PING"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  redis-data:
+  pgdata:

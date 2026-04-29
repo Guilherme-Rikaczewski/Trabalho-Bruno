@@ -1,0 +1,95 @@
+// classes personalizadas --------
+
+// inputs ---
+.ipt-primary{
+  background: hsl(243, 17%, 21%) !important;
+  input, select{
+    color: white;
+    box-shadow: none;
+    outline: none;
+  }
+  select{
+    color: white !important;
+  }
+  input::placeholder, select::placeholder{
+    color: #6b6b76 !important;
+  }
+  select:focus{
+    background: #403e4f !important;
+    box-shadow: none;
+  }
+  &:focus-within{
+    outline: 0.1rem solid hsl(244, 7%, 56%);
+    background: #282637 !important;
+  }
+}
+.ipt-second{
+  background: #49485b !important;
+  input, select{
+    color: white;
+    box-shadow: none;
+    outline: none;
+  }
+  select{
+    color: white !important;
+  }
+  input::placeholder{
+    color: #9999a8 !important;
+  }
+  select:focus{
+    background: #403e4f !important;
+    box-shadow: none;
+  }
+  &:focus-within{
+    outline: 0.1rem solid #9999a8;
+    background: #403e4f !important;
+  }
+}
+
+
+// fonte ---
+.fs-responsive {
+  font-size: 1.2rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.1rem;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 1rem;
+  }
+}
+
+
+// botões ---
+.btn-primary-green{
+  background-color: $primary-green;
+  border: 1px solid $primary-green;
+  color: $bg-dark-primary !important;
+  font-weight: 600 !important;
+}
+.btn-primary-green:hover, .btn-primary-green:focus, .btn-primary-green:active{
+  background-color: #5ba9a3 !important;
+}
+.btn-primary-purple{
+  background-color: $primary-purple;
+  border: 1px solid $primary-purple;
+  color: white !important;
+  font-weight: 600 !important;
+}
+.btn-primary-purple:hover, .btn-primary-purple:focus, .btn-primary-purple:active{
+  background-color: #5f4cb0 !important;
+}
+
+.btn-secondary{
+  background-color: #a19fc9;
+  border: 1px solid #a19fc9;
+  color: $bg-dark-primary !important;
+  font-weight: 600 !important;
+}
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active{
+  background-color: #8381a3 !important;
+}
+.btn-secondary:hover{
+  border: 1px solid #8381a3;
+}
