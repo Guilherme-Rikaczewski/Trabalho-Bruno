@@ -1,0 +1,65 @@
+{
+  "games": [
+    {
+      "id": 1,
+      "code": "ABCDE1",
+      "name": "Herança de Trevas",
+      "imagePath": null
+    },
+    {
+      "id": 2,
+      "code": "ABCDE2",
+      "name": "Mar Dormente",
+      "imagePath": null
+    },
+    {
+      "id": 3,
+      "code": "ABCDE3",
+      "name": "Não sei o que",
+      "imagePath": null
+    },
+    {
+      "id": 4,
+      "code": "ABCDE4",
+      "name": "Areia e Sangue",
+      "imagePath": null
+    },
+    {
+      "name": "Nortenha",
+      "id": 5,
+      "imagePath": null
+    }
+  ],
+  "sheets": [
+    {
+      "id_sheet": 1,
+      "id_game_sheets": 1,
+      "name_sheet": "Megaera",
+      "image_sheet_path": ""
+    },
+    {
+      "id_sheet": 2,
+      "id_game_sheets": 3,
+      "name_sheet": "Leblanc",
+      "image_sheet_path": ""
+    },
+    {
+      "id_sheet": 3,
+      "id_game_sheets": 5,
+      "name_sheet": "Azotho Embrulhado",
+      "image_sheet_path": ""
+    }
+  ],
+  "users": [
+    {
+      "id_user": 1,
+      "email": "madu3811@gmail.com",
+      "username": "maduaes",
+      "password": "123"
+    }
+  ],
+  "profilePic": {
+    "profilePicName": "",
+    "profilePicPath": null
+  }
+}

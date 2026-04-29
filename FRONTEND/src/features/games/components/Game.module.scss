@@ -1,0 +1,67 @@
+.card{
+  background: none;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 13px;
+  .imgBox{
+    position: relative;
+    min-height: 19vh;
+    max-height: 19vh;
+    overflow: hidden;
+  }
+  .cardBody{
+    background:  linear-gradient(to right, #3c3b506e, #4b4a62 70%);
+    color: white;
+    padding: 10px 15px;
+  }
+}
+
+.roomCode {
+  position: absolute;
+  right: 0.8rem;
+  bottom: 0.8rem;
+  z-index: 2;
+  border-radius: 999px;
+  background: rgba(17, 24, 39, 0.82);
+  color: #fff;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.roomName {
+  margin: 0;
+}
+
+.editIcon {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: opacity 0.2s, transform 0.2s;
+  padding: 0.5rem;
+  top: 0;
+  right: 0.1rem;
+}
+
+.btnEdit{
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card:hover{
+  cursor: pointer;
+  transform: scale(1.03);
+  transition-duration: 0.25s;
+  
+  .editIcon {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .editIcon:hover {
+    transform: scale(1.1);
+  }
+}

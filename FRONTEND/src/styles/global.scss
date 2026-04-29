@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html,
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-color: $background-color;
+  color: white;
+  font-family: $font-inter;
+}
+
+.content {
+  flex: 1;
+}
+

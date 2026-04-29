@@ -1,0 +1,31 @@
+.sheetsPage{
+  min-height: calc(100vh - 260px);
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
+  padding-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.actionArea{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 55vh;
+}
+
+.createButton{
+  min-width: min(100%, 22rem);
+  min-height: 4.25rem;
+  border-radius: 999px;
+  padding: 0.9rem 1.6rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+}
+
+@media screen and (max-width: 575px) {
+  .actionArea{
+    min-height: 48vh;
+  }
+
+  .createButton{
+    width: 100%;
+  }
+}

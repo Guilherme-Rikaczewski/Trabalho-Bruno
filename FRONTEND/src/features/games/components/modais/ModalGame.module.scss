@@ -1,0 +1,23 @@
+.modalGame{
+  background-color: $bg-dark-primary !important;
+  color: white !important;
+
+  :global(.modal-header) {
+    border-bottom: 1px solid #292934;
+  }
+
+  :global(.modal-footer) {
+    border-top: 1px solid #292934; 
+  }
+  
+  .deleteGame{
+    display: flex;
+    background-color: rgb(197, 56, 75);
+    border: none;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+  }
+}

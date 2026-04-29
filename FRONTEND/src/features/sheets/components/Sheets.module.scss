@@ -1,0 +1,61 @@
+// // SheetsContainer
+.sheets-container{
+    background-color: $secondary-green;
+    padding-bottom: 0.6rem;
+    height: auto;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+.nav-sheets-container{
+    background-color: #363547;
+    font-weight: 700;
+}
+
+:global(.nav-tabs.nav-tabs-sheets) {
+  border-bottom: none;
+}
+
+:global(.nav-tabs.nav-tabs-sheets .btn-tab) {
+  color: #D1CFF4;
+  border: none;
+  background-color: #363547;
+  height: 6vh;
+}
+
+:global(.nav-tabs.nav-tabs-sheets .btn-tab.active),
+:global(.nav-tabs.nav-tabs-sheets .nav-link.active) {
+  background-color: $secondary-green;
+  color: white;
+  cursor: default;
+  border-bottom: none;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  position: relative;
+}
+
+.nav-tabs-sheets{
+    border-bottom: none;
+}
+.div-text-sheets{
+    background-color: #418181;
+    margin: 4% 0 4% 0;
+    border-radius: 2rem;
+    color: #9EC5D1;
+}
+
+
+// // Sheets
+.sheets-group{
+  .sheets{
+    background-color: #363547;
+    border-radius: 1rem;
+    border: 0;
+    color: white;
+    margin: 0 1rem;
+  }
+  .sheets:hover{
+    background-color: #2d2c3a;
+    transition-duration: 0.45s;
+    cursor: pointer;
+  }
+}
