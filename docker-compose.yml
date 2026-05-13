@@ -3,7 +3,7 @@ version: '3.9'
 services:
   database:
     image: postgres:16
-    container_name: database
+    container_name: database_bruno
     restart: always
     env_file:
       - .env
@@ -23,7 +23,7 @@ services:
       context: ./BACKEND
       dockerfile: Dockerfile.dev.backend.v1
     # image: guilhermerikaczewski/rogues:backend-1.0.0
-    container_name: backend
+    container_name: backend_bruno
     restart: always
     depends_on:
       database:
@@ -37,23 +37,23 @@ services:
     networks:
       - app_network
 
-  nginx:
-    # image: guilhermerikaczewski/rogues:frontend-1.0.1
-    build:
-      context: ./FRONTEND
-      dockerfile: Dockerfile.dev.frontend.v1
-    restart: always
-    container_name: nginx
-    ports:
-      - "80:80"
-    depends_on:
-      - backend
-    networks:
-      - app_network
+  # nginx:
+  #   # image: guilhermerikaczewski/rogues:frontend-1.0.1
+  #   build:
+  #     context: ./FRONTEND
+  #     dockerfile: Dockerfile.dev.frontend.v1
+  #   restart: always
+  #   container_name: nginx
+  #   ports:
+  #     - "80:80"
+  #   depends_on:
+  #     - backend
+  #   networks:
+  #     - app_network
   
   redis:
     image: redis:7.2-alpine
-    container_name: redis
+    container_name: redis_bruno
     command: ["redis-server", "--appendonly", "yes", "--requirepass", "${REDIS_PASSWORD}"]
     volumes:
       - redis_data:/data
