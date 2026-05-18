@@ -1,7 +1,6 @@
 from fastapi import APIRouter, HTTPException
 from app.schemas.ai_schema import AiResponse, CharacterAtributtes
 import app.services.ai_service as ai
-import ast
 
 
 router = APIRouter(prefix="/ai", tags=["AI"])
@@ -20,11 +19,11 @@ def generete_character(atributtes: CharacterAtributtes):
             'weapon': atributtes.weapon,
             'god': atributtes.god,
             'build': atributtes.build,
+            'ai_role': atributtes.ai_role.value,
+            'prompt_type': atributtes.prompt_type.value,
         }
 
-        ai_generated_char = ai.get_char_made_by_ai(char_atributtes)
-        ai_generated_char_dict = ast.literal_eval(ai_generated_char)
-        return ai_generated_char_dict
+        return ai.get_char_made_by_ai(char_atributtes)
     except HTTPException:
         raise
     except Exception as error:
