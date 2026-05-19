@@ -12,6 +12,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 
 load_dotenv()
 api_key = os.getenv("GEMINI_API_KEY")
+openai_api_key = os.getenv("OPENAI_API_KEY")
 
 
 def get_char_made_by_ai(atributtes: dict):
@@ -223,9 +224,41 @@ def _parse_ai_response(raw_response: str) -> dict:
         for field in RESPONSE_FIELDS
     }
 
+def _get_response_from_openai(atributtes: dict) -> dict:
+    if not openai_api_key:
+        raise Exception("OPENAI_API_KEY not configured")
+
+    from openai import OpenAI
+    client = OpenAI(api_key=openai_api_key)
+
+    prompt = BASE_PROMPT.format(
+        role_prompt=ROLE_PROMPTS.get(atributtes["ai_role"], ROLE_PROMPTS["modo_tecnico"]),
+        prompt_type=PROMPT_TYPES.get(atributtes["prompt_type"], PROMPT_TYPES["prompt_estruturado"]),
+        game=atributtes["game"],
+        name=atributtes["name"],
+        char_class=atributtes["char_class"],
+        race=atributtes["race"],
+        origin=atributtes["origin"],
+        weapon=atributtes["weapon"],
+        god=atributtes["god"],
+        build=atributtes["build"],
+    )
+
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.4,
+    )
+
+    return _parse_ai_response(response.choices[0].message.content)
+
 
 def get_char_made_by_ai(atributtes: dict):
     normalized_attributes = _normalize_attributes(atributtes)
+
+    if normalized_attributes["ai_role"] in {"modo_tecnico", "modo_suporte_tecnico"}:
+        return _get_response_from_openai(normalized_attributes)
+
     role_prompt = ROLE_PROMPTS.get(
         normalized_attributes["ai_role"],
         ROLE_PROMPTS["modo_detalhado"],
